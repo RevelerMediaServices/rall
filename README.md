@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 May 2018
 
 ### Written Tutorials
-May 2108
+May 2018
 
 ### Audio Tutorials
 
@@ -17,35 +17,49 @@ May 2108
 JSX 
 - Expressions
 - template literals
+
 Elements
+
 Ref
+
 Dom / Virtual Dom
 - nodes
+
 Closures / Hoisting
 - var
 - let
 - const
+
 IIFE
+
 Functional Programming
 - map
 - filter
 - reduce
 - concat
+
 Contitionals
 - &&
 - if
+
 Class
+
 Event Handling
 
 Components
+
 Smart / Dumb
+
 Controlled / Uncrolled
+
 Pure
+
 Functional
 
-State
+### State
 - setState
-Props
+
+### Props
 - Data Flow
 
 Component Life Cycle
@@ -61,9 +75,11 @@ Javascript Patterns
 ### Redux Concepts
 
 Store
+
 Connect
 - MapStateToProps
 
 ### Contributions:
 Add to the list:
+
 Email suggestion to jwgravesfl@gmail.com
