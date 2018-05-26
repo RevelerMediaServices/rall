@@ -1,19 +1,19 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 
-##ReactJS and React Native Learn List
+## ReactJS and React Native Learn List
 
-###Video Tutorials
+### Video Tutorials
 May 2018
 
-###Written Tutorials
+### Written Tutorials
 May 2108
 
-###Audio Tutorials
+### Audio Tutorials
 
 
 
-###Study List
+### Study List
 JSX 
 - Expressions
 - template literals
@@ -58,12 +58,12 @@ Asyncronous / Syncronous
 
 Javascript Patterns
 
-###Redux Concepts
+### Redux Concepts
 
 Store
 Connect
 - MapStateToProps
 
-###Contributions:
+### Contributions:
 Add to the list:
 Email suggestion to jwgravesfl@gmail.com
