@@ -25,7 +25,8 @@ string\
 symbol
 
 ##### Objects
-> mutable and stored by reference
+> mutable and stored by reference\
+almost everything except prmitives are objects
 
 Explict/Implicit
 
