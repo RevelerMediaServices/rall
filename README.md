@@ -18,14 +18,22 @@ May 2018
 
 ### Study List
 ##### Primitive Types
+<<<<<<< HEAD
 > Immutable
 
 undefined\
 null(object)\
+=======
+> Primitives are immutable
+
+undefined\
+null\
+>>>>>>> 4edecf5b92ec3cc84b7a0b14b63b276b9bef03af
 boolean\
 number\
 string\
 symbol
+<<<<<<< HEAD
 
 #### Coercion
 > Type conversion (or typecasting) means transfer of data from one data type to another. 
@@ -46,10 +54,17 @@ false\
 {}\
 []\
 Everything else\
+=======
+>>>>>>> 4edecf5b92ec3cc84b7a0b14b63b276b9bef03af
 
 ##### Objects
 > mutable and stored by reference\
 almost everything except prmitives are objects
+<<<<<<< HEAD
+=======
+
+Explict/Implicit
+>>>>>>> 4edecf5b92ec3cc84b7a0b14b63b276b9bef03af
 
 ##### Object Literal
 > An object literal is a list of zero or more pairs of property names and associated values of an object, enclosed in curly braces ({}). Do not use an object literal at the beginning of a statement. This will lead to an error or not behave as you expect, because the { will be interpreted as the beginning of a block.
@@ -129,8 +144,11 @@ Connect
 Add to the list:
 
 Email suggestion to jwgravesfl@gmail.com
+<<<<<<< HEAD
 
 ### References and Information Sources
 [CS50 Mobile App with React Native](https://cs50.github.io/mobile/)
 [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [w3schools.com](https://www.w3schools.com/Js)
+=======
+>>>>>>> 4edecf5b92ec3cc84b7a0b14b63b276b9bef03af
