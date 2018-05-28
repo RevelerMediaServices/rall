@@ -16,12 +16,13 @@ May 2018
 ### Study List
 ##### Primitive Types
 > Primitives are immutable
-> undefined
-> null
-> boolean
-> number
-> string
-> symbol
+
+undefined
+. null
+  boolean
+number
+string
+symbol
 
 ##### Objects
 > mutable and stored by reference
