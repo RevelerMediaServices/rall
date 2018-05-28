@@ -19,10 +19,10 @@ May 2018
 
 undefined
 . null
-  boolean
-###### number
-###### string
-symbol
+  boolean\
+ number/
+string/
+symbol\
 
 ##### Objects
 > mutable and stored by reference
