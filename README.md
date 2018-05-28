@@ -14,6 +14,33 @@ May 2018
 
 
 ### Study List
+##### Primitive Types
+> Primitives are immutable
+> undefined
+> null
+> boolean
+> number
+> string
+> symbol
+
+##### Objects
+> mutable and stored by reference
+
+Explict/Implicit
+
+> == ignores type
+> === requires equivalent types
+
+##### Prototype
+> Inheritance
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+
 JSX 
 - Expressions
 - template literals
