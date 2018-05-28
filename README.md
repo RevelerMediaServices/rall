@@ -20,8 +20,8 @@ May 2018
 undefined
 . null
   boolean
-number
-string
+###### number
+###### string
 symbol
 
 ##### Objects
