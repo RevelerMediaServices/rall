@@ -11,6 +11,8 @@ If one would like to contribute, one may submite an article or tutorial to [jwgr
 May 2018
 - Coming Soon
 
+I need soemthing new
+
 ### Written Tutorials
 - Coming Soon
 
@@ -18,22 +20,14 @@ May 2018
 
 ### Study List
 ##### Primitive Types
-<<<<<<< HEAD
 > Immutable
 
 undefined\
 null(object)\
-=======
-> Primitives are immutable
-
-undefined\
-null\
->>>>>>> 4edecf5b92ec3cc84b7a0b14b63b276b9bef03af
 boolean\
 number\
 string\
 symbol
-<<<<<<< HEAD
 
 #### Coercion
 > Type conversion (or typecasting) means transfer of data from one data type to another. 
@@ -54,18 +48,12 @@ false\
 {}\
 []\
 Everything else\
-=======
->>>>>>> 4edecf5b92ec3cc84b7a0b14b63b276b9bef03af
 
 ##### Objects
 > mutable and stored by reference\
 almost everything except prmitives are objects
-<<<<<<< HEAD
-=======
 
 Explict/Implicit
->>>>>>> 4edecf5b92ec3cc84b7a0b14b63b276b9bef03af
-
 ##### Object Literal
 > An object literal is a list of zero or more pairs of property names and associated values of an object, enclosed in curly braces ({}). Do not use an object literal at the beginning of a statement. This will lead to an error or not behave as you expect, because the { will be interpreted as the beginning of a block.
 
