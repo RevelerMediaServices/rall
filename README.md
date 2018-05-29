@@ -57,11 +57,14 @@ Explict/Implicit
 ##### Object Literal
 > An object literal is a list of zero or more pairs of property names and associated values of an object, enclosed in curly braces ({}). Do not use an object literal at the beginning of a statement. This will lead to an error or not behave as you expect, because the { will be interpreted as the beginning of a block.
 
-##### Prototype Inheritance 
+##### Prototype Inheritance    ^^^^
 > All JavaScript objects inherit properties and methods from a prototype.\
 Date objects inherit from Date.prototype. Array objects inherit from Array.prototype. Person objects inherit from Person.prototype.\
 The Object.prototype is on the top of the prototype inheritance chain:\
-Date objects, Array objects, and Person objects inherit from Object.prototype.
+Date objects, Array objects, and Person objects inherit from Object.prototype./
+- Prototype Wrappers
+
+Passing by Reference / by Value.
 
 JSX 
 - Expressions
@@ -136,4 +139,4 @@ Email suggestion to jwgravesfl@gmail.com
 ### References and Information Sources
 [CS50 Mobile App with React Native](https://cs50.github.io/mobile/)\
 [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)\
-[w3schools.com](https://www.w3schools.com/Js)\
+[w3schools.com](https://www.w3schools.com/Js)
