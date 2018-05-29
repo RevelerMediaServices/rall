@@ -91,9 +91,9 @@ myFunc(5) & myFunc(10)/
 They share the same function body definition, but store different lexical environments.\
 Closures are useful because they let you associate some data (the lexical environment) with a function that operates on that data.\
 JavaScript does not provide a native way of doing this, but it is possible to emulate private methods using closures.\
-- Three scopes\
-  1. Own/Local Scope\
-  2. Outer Function Scope\
+- Three scopes
+  1. Own/Local Scope
+  2. Outer Function Scope
   3. Global Scope
 
 #### Imediately Invoved Function Expression(IIFE)
@@ -101,7 +101,7 @@ JavaScript does not provide a native way of doing this, but it is possible to em
 Creates a closure\
 Doesn't add to or modify global object\
 - 2 parts\
-    1. anonymous function with lexical scope within () preventing pollution of global scope\
+    1. anonymous function with lexical scope within () preventing pollution of global scope
     2. Create the immediately executing function expression ()
 
 #### First-Class Functions
@@ -120,35 +120,117 @@ concat()
 #### Single Threaded ^^^^
 > Javascript is single-threaded, synchronous language
 
+#### Callbacks
+> A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.  Callbacks can be synchronous and asynchronous.
+
 #### Synchronous
-> A function that takes a while can cause the page the fail
+> A synchronous callback is executed immediately. A function that takes a while can cause the page to fail.  
 
 #### Asynchronous JavaScript
-> 1. Execution Stack
-  2. Heap
-  3. Queue
-  4. Event Loop
-
-#### Callbacks
-> 
+> Asynchronous callbacks are often used to continue code execution after an asynchronous operation has completed.\
+1. Execution(Call) Stack\
+      A mechanism for an interpreter (like the JavaScript interpreter in a web browser) to keep track of its place in a script that calls multiple functions - what function is currently being run, what functions are called from within that function and should be called next, etc.\
+  2. Heap\
+      a method to store a collection of objects in such a way that the smallest element can be quickly found.\
+  3. Queue\
+      One or more functions waiting to run.  queue() method shows the queued functions\
+  4. Event Loop\
+      Never blocking, so when the application is waiting other actions can be taken When functions complete, they are removed from the stack and the frame below continues executing/
 
 #### Promises
+> A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.\
+
+> A Promise is in one of these states:\
+pending: initial state, neither fulfilled nor rejected.\
+fulfilled: meaning that the operation completed successfully.\
+rejected: meaning that the operation failed.\
+A pending promise can either be fulfilled with a value, or rejected with a reason (error). When either of these options happens, the associated handlers queued up by a promise's then method are called. (If the promise has already been fulfilled or rejected when a corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached.)
+
+[Further information about Promises on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 #### Async/Await
+> The async function declaration defines an asynchronous function, which returns an AsyncFunction object.\
+n async function can contain an await expression that pauses the execution of the async function and waits for the passed Promise's resolution, and then resumes the async function's execution and returns the resolved value.
 
 #### this
+> 1. In the global execution context (outside of any function), this refers to the global object whether in strict mode or not.
+  2. Inside a function, the value of this depends on how the function is called. Call and Apply are used to pass the value of this to another context.
+  3. Bind Method creates a new function with the same body and scope and it is permanently bound to the first argument of bind, regardless of how the function is being used.
+    Arrow functions this retains the enclosing lexical context's this. 
 
-#### setting 'this'
+
+#### setting 'this' ^^^^
 
 #### Dom / Virtual Dom
-Document Object Model\
+> Document Object Model\
 Elements(HTML tree like structure)\
 The DOM can be modified using JavaScript
 
+#### Classes
+> Defines complex objects with their own prototypes
 
-JSX 
+#### Instances
+
+#### Methods
+
+#### Static Methods
+
+#### Properties
+
+#### New
+
+#### Constructor
+
+#### Extends
+
+#### Super
+
+#### Declarative
+> React is declarative meaning declare what you want.  
+
+#### Performant
+> 
+
+#### Reconciliation 
+> Syncing changes in app state to the DOM\
+  Reconstructs virtual DOM, diffs against DOM and only makes changes needed.
+
+#### Compoents
+> React is componentized for reuse and to break problems down to their simpliest form.  Highly customizable.  
+
+
+#### JSX 
+> - Javascript XML\
+  Transpiles to JavaScript\
+  < lowercase > are HTML tags, < Uppercase > are Components\
+  - Components are functions\
+    returns a node that React can render\
+    receives properties object
+
+#### Props 
+> The Properties object passed to a component and used to computer the returned node.\
+  Unidirectional data flow
+
+#### State
+> Internally managed configuration of a component.\
+  this.state is a prop of component instances\
+  Update state with this.setState()\
+  1. setState() calls are batched and run asynchronously, causing multiple setState() calls to be ignored.  Pass setState an object or a function of previous state.
+  2. Changes in state cause re-renders.
+
+
+
+
+
+
+
+
+
+
+
 - Expressions
 - template literals
+
 
 
 
@@ -167,7 +249,7 @@ Class
 
 Event Handling
 
-Components
+
 
 Smart / Dumb
 
@@ -177,19 +259,9 @@ Pure Functions
 
 Functional
 
-### State
-- setState
-
-### Props
-- Data Flow
-
 Component Life Cycle
 - Constructor
 - Render
-
-Reconciliation
-
-Asyncronous / Syncronous
 
 Javascript Patterns
 
@@ -209,4 +281,5 @@ Email suggestion to jwgravesfl@gmail.com
 [CS50 Mobile App with React Native](https://cs50.github.io/mobile/)\
 [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)\
 [w3schools.com](https://www.w3schools.com/Js)\
-[Eloquent JavaScript](https://eloquentjavascript.net/)
+[Eloquent JavaScript](https://eloquentjavascript.net/)\
+[ReactJS Documentation](https://reactjs.org/)
