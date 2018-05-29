@@ -37,7 +37,7 @@ symbol
 explicitly require a conversion to take place.\
 For example, given the instruction 5+2.0, the floating point 2.0 is implicitly typecasted into an integer, but given the instruction Number("0x11"), the string "0x11" is explicitly typecasted as the number 17.
 
-- ● Which values are falsy?\
+- Which values are falsy?\
 undefined\
 null\
 false\
