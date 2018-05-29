@@ -63,8 +63,48 @@ Date objects inherit from Date.prototype. Array objects inherit from Array.proto
 The Object.prototype is on the top of the prototype inheritance chain:\
 Date objects, Array objects, and Person objects inherit from Object.prototype./
 - Prototype Wrappers
+- Objects store a reference to its prototype
+- Properties/methods defined most tightly to the instance have priority
+- Recomended not to change prototype because it could change other instances of the prototype
 
-Passing by Reference / by Value.
+##### Methods
+> A method is a function which is a property of an object.\
+[List of JavaScript Methods](https://docs.microsoft.com/en-us/scripting/javascript/reference/javascript-methods#methods)\
+[JavaScript methods index](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index)
+
+#### Scope ^^^^
+##### Hoisting ^^^^
+> Lexical scoping (var) - Hoisted\
+  Variable and function declarations are moved to the top of their containing scope.\
+  The word "lexical" refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Nested functions have access to variables declared in their outer scope.\
+  From declared until the function ends.
+
+> Block Scoping (let and const) - Non Hoisted\
+  Until the next } is reached.
+
+-- Passing by Reference / by Value.  ^^^^
+
+-- The Global Object ^^^^
+
+##### Closures
+> A closure is the combination of a function and the lexical environment within which that function was declared./
+myFunc(5) & myFunc(10)/
+They share the same function body definition, but store different lexical environments.\
+Closures are useful because they let you associate some data (the lexical environment) with a function that operates on that data.\
+JavaScript does not provide a native way of doing this, but it is possible to emulate private methods using closures.\
+- Three scopes\
+  Own/Local Scope\
+  Outer Function Scope\
+  Global Scope\
+
+##### Imediately Invoved Function Expression
+> function expression that is invoked immediately\
+Creates a closure\
+Doesn't add to or modify global object\
+- 2 parts\
+anonymous function with lexical scope within () preventing pollution of global scope\
+Create the immediately executing function expression ()
+
 
 JSX 
 - Expressions
