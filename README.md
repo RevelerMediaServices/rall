@@ -167,37 +167,50 @@ Elements(HTML tree like structure)\
 The DOM can be modified using JavaScript
 
 #### Classes
-> Defines complex objects with their own prototypes
-
-#### Instances
-
-#### Methods
+> Defines complex objects with their own prototypes\
+  defines all of the properties that characterize a certain set of objects.  The number of properties can not be changed after the class is defined, but at run time you can add or remove properties on any object. 
 
 #### Static Methods
+> Static method calls are made directly on the class and are not callable on instances of the class. Static methods are often used to create utility functions.
 
-#### Properties
+#### Instances
+> The instantiation of a class.  
 
-#### New
+#### Methods
+> A method is a function which is a property of an object.
 
 #### Constructor
+> The constructor method is a special method for creating and initializing an object created within a class.  May only have 1 per class. 
+
+#### New
+> reates an instance of a user-defined object type or of one of the built-in object types that has a constructor function.
 
 #### Extends
+> Used to create a class which is a child of another class.
 
 #### Super
+> Used to access and call functions on an object's parent.
+
+#### Properties
+> Properties are the values associated with a JavaScript object.\
+A JavaScript object is a collection of unordered properties.\
+Properties can usually be changed, added, and deleted, but some are read only.\
 
 #### Declarative
 > React is declarative meaning declare what you want.  
 
 #### Performant
-> 
+> 1. Reduce Activity in Loops
+  2. Reduce DOM Access
+  3. Reduce DOM Size
+  4. Avoid Unnecessary Variables
 
-#### Reconciliation 
+#### React Reconciliation 
 > Syncing changes in app state to the DOM\
   Reconstructs virtual DOM, diffs against DOM and only makes changes needed.
 
-#### Compoents
+#### React Components
 > React is componentized for reuse and to break problems down to their simpliest form.  Highly customizable.  
-
 
 #### JSX 
 > - Javascript XML\
@@ -207,11 +220,11 @@ The DOM can be modified using JavaScript
     returns a node that React can render\
     receives properties object
 
-#### Props 
-> The Properties object passed to a component and used to computer the returned node.\
+#### React Props 
+> The Properties object passed to a component and used to compute the returned node.\
   Unidirectional data flow
 
-#### State
+#### React State
 > Internally managed configuration of a component.\
   this.state is a prop of component instances\
   Update state with this.setState()\
@@ -228,8 +241,10 @@ The DOM can be modified using JavaScript
 
 
 
-- Expressions
-- template literals
+Expressions
+template literals
+
+Object literal
 
 
 
