@@ -132,11 +132,8 @@ Connect
 Add to the list:
 
 Email suggestion to jwgravesfl@gmail.com
-<<<<<<< HEAD
 
 ### References and Information Sources
 [CS50 Mobile App with React Native](https://cs50.github.io/mobile/)
 [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [w3schools.com](https://www.w3schools.com/Js)
-=======
->>>>>>> 4edecf5b92ec3cc84b7a0b14b63b276b9bef03af
