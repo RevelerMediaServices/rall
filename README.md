@@ -6,32 +6,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 If one would like to contribute, one may submite an article or tutorial to [jwgravesfl@gmail.com](jwgravesfl@gmail.com).   
 
+# Study List
 
-### Video Tutorials
-May 2018
-- Coming Soon
-
-I need soemthing new
-
-### Written Tutorials
-- Coming Soon
-
-### Audio Tutorials
-
-### Study List
-#### Primitive Types
+### Primitive Types
 > Immutable
-- undefined\
-null(object)\
-boolean\
-number\
-string\
-symbol
+- undefined
+- null(object)
+- boolean
+- number
+- string
+- symbol
 
-#### Coercion
+### Coercion
 > Type conversion (or typecasting) means transfer of data from one data type to another. 
 
-#### Explict/Implicit
+### Explict/Implicit
 > Implicit conversion happens when the compiler automatically assigns data types, but the source code can also\
 explicitly require a conversion to take place.\
 For example, given the instruction 5+2.0, the floating point 2.0 is implicitly typecasted into an integer, but given the instruction Number("0x11"), the string "0x11" is explicitly typecasted as the number 17.
@@ -49,11 +38,13 @@ false\
 Everything else
 
 #### Objects
-> mutable and stored by reference\
-almost everything except prmitives are objects
+> Mutable and stored by reference\
+Almost everything except prmitives are objects
 
 #### Object Literal
 > An object literal is a list of zero or more pairs of property names and associated values of an object, enclosed in curly braces ({}). Do not use an object literal at the beginning of a statement. This will lead to an error or not behave as you expect, because the { will be interpreted as the beginning of a block.
+
+[JavaScript ES6 Object Literal Enhancements/Extensions](https://www.youtube.com/watch?v=oHVc0VZG9_8&t=62s)
 
 #### Prototype Inheritance
 > All JavaScript objects inherit properties and methods from a prototype.\
@@ -61,9 +52,10 @@ Date objects inherit from Date.prototype. Array objects inherit from Array.proto
 The Object.prototype is on the top of the prototype inheritance chain:\
 Date objects, Array objects, and Person objects inherit from Object.prototype./
 - Prototype Wrappers
-- Objects store a reference to its prototype
-- Properties/methods defined most tightly to the instance have priority
-- Recomended not to change prototype because it could change other instances of the prototype
+  1. Creates a closure, calls a second wrapped function.
+- Objects store a reference to its prototype.
+- Properties/methods defined most tightly to the instance have priority.
+- Recomended not to change prototype because it could change other instances of the prototype.
 
 #### Methods
 > A method is a function which is a property of an object.\
@@ -71,6 +63,11 @@ Date objects, Array objects, and Person objects inherit from Object.prototype./
 [JavaScript methods index](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index)
 
 ### Scope
+- Three scopes
+  1. Own/Local Scope
+  2. Outer Function Scope
+  3. Global Scope
+
 #### Hoisting 
 > Lexical scoping (var) - Hoisted\
   Variable and function declarations are moved to the top of their containing scope.\
@@ -90,10 +87,6 @@ myFunc(5) & myFunc(10)/
 They share the same function body definition, but store different lexical environments.\
 Closures are useful because they let you associate some data (the lexical environment) with a function that operates on that data.\
 JavaScript does not provide a native way of doing this, but it is possible to emulate private methods using closures.\
-- Three scopes
-  1. Own/Local Scope
-  2. Outer Function Scope
-  3. Global Scope
 
 #### Imediately Invoved Function Expression(IIFE)
 > function expression that is invoked immediately\
@@ -103,16 +96,21 @@ Doesn't add to or modify global object\
     1. anonymous function with lexical scope within () preventing pollution of global scope
     2. Create the immediately executing function expression ()
 
+#### Anonymouse Function
+
 #### First-Class Functions
 > A programming language is said to have First-class functions when functions in that language are treated like any other variable.  Can be assigned to variables, array values and object values.  Can be passed as arguments to other functions and can be returned from functions.
 
 #### Higher-Order Functions
-> Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions.\
-  1. map()\
-  2. filter()\
-  3. reduce()\
-  4. concat()\
-  5. many others
+> Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions.
+1. map()
+2. filter()
+3. reduce()
+4. concat()
+5. slice()
+6. push()
+7. shift()
+
 
 #### Currying  ^^^^
 > 
@@ -140,7 +138,7 @@ Doesn't add to or modify global object\
 #### Promises
 > A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.\
 
-> A Promise is in one of these states:\
+> A Promise is in one of these states:
 - pending: initial state, neither fulfilled nor rejected.\
 - fulfilled: meaning that the operation completed successfully.\
 - rejected: meaning that the operation failed.\
@@ -152,14 +150,40 @@ A pending promise can either be fulfilled with a value, or rejected with a reaso
 > The async function declaration defines an asynchronous function, which returns an AsyncFunction object.\
 n async function can contain an await expression that pauses the execution of the async function and waits for the passed Promise's resolution, and then resumes the async function's execution and returns the resolved value.
 
-#### this
+#### Expressions
+> any valid unit of code that resolves to a value.
+
+##### Primary Expressions
+
+###### this
 > 1. In the global execution context (outside of any function), this refers to the global object whether in strict mode or not.
-  2. Inside a function, the value of this depends on how the function is called. Call and Apply are used to pass the value of this to another context.
-  3. Bind Method creates a new function with the same body and scope and it is permanently bound to the first argument of bind, regardless of how the function is being used.
-    Arrow functions this retains the enclosing lexical context's this. 
+2. Inside a function, the value of this depends on how the function is called. Call and Apply are used to pass the value of this to another context.
+3. Bind Method creates a new function with the same body and scope and it is permanently bound to the first argument of bind, regardless of how the function is being used.
+  - Arrow functions this retains the enclosing lexical context's this. 
 
 
-#### setting 'this' ^^^^
+###### setting 'this' ^^^^
+
+###### Grouping Operator ( )
+>  controls the precedence of evaluation.  
+
+##### Left-hand-side expressions
+###### New
+> Creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function.
+
+###### Super
+> Used to access and call functions on an object's parent.
+
+###### Spread Operator ( ... )
+> allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) are expected.  
+1. function calls
+2. array literals
+3. Object Literals
+4. Only for interables
+5. Spread with many values
+
+###### Rest Parameter ( ... )
+> allows us to represent an indefinite number of arguments as an array.
 
 #### Dom / Virtual Dom
 > Document Object Model\
@@ -182,14 +206,8 @@ The DOM can be modified using JavaScript
 #### Constructor
 > The constructor method is a special method for creating and initializing an object created within a class.  May only have 1 per class. 
 
-#### New
-> Creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function.
-
 #### Extends
 > Used to create a class which is a child of another class.
-
-#### Super
-> Used to access and call functions on an object's parent.
 
 #### Properties
 > Properties are the values associated with a JavaScript object.\
@@ -205,7 +223,8 @@ Properties can usually be changed, added, and deleted, but some are read only.\
   3. Reduce DOM Size
   4. Avoid Unnecessary Variables
 
-#### Expressions
+
+#### Mixins
 #### template literals
 #### Ref
 #### Immutable
