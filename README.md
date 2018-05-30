@@ -1,8 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 
-## ReactJS and React Native Learn List
-> Rall is intended to be a gathering of ReactJS and React Native **free** learning resources.  Although there are other resources for this information, Rall hopes to keep information current and relevant by adding tutorials, articles and other free media by date. Rall also includes a study sheet for ReactJS, React Native and related concepts.\
+# ReactJS Awesome Learn List
+> Rall is intended to be a gathering of ReactJS **free** learning resources.  Although there are other resources for this information, Rall hopes to keep information current and relevant by adding tutorials, articles and other free media by date. Rall also includes a study sheet for ReactJS and related concepts.\
 
 If one would like to contribute, one may submite an article or tutorial to [jwgravesfl@gmail.com](jwgravesfl@gmail.com).   
 
@@ -46,13 +46,12 @@ false\
 - Which values are truthy?\
 {}\
 []\
-Everything else\
+Everything else
 
 #### Objects
 > mutable and stored by reference\
 almost everything except prmitives are objects
 
-Explict/Implicit
 #### Object Literal
 > An object literal is a list of zero or more pairs of property names and associated values of an object, enclosed in curly braces ({}). Do not use an object literal at the beginning of a statement. This will lead to an error or not behave as you expect, because the { will be interpreted as the beginning of a block.
 
@@ -109,10 +108,11 @@ Doesn't add to or modify global object\
 
 #### Higher-Order Functions
 > Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions.\
-map()\
-filter()\
-reduce()\
-concat()
+  1. map()\
+  2. filter()\
+  3. reduce()\
+  4. concat()\
+  5. many others
 
 #### Currying  ^^^^
 > 
@@ -128,7 +128,7 @@ concat()
 
 #### Asynchronous JavaScript
 > Asynchronous callbacks are often used to continue code execution after an asynchronous operation has completed.\
-1. Execution(Call) Stack\
+  1. Execution(Call) Stack\
       A mechanism for an interpreter (like the JavaScript interpreter in a web browser) to keep track of its place in a script that calls multiple functions - what function is currently being run, what functions are called from within that function and should be called next, etc.\
   2. Heap\
       a method to store a collection of objects in such a way that the smallest element can be quickly found.\
@@ -141,9 +141,9 @@ concat()
 > A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.\
 
 > A Promise is in one of these states:\
-pending: initial state, neither fulfilled nor rejected.\
-fulfilled: meaning that the operation completed successfully.\
-rejected: meaning that the operation failed.\
+- pending: initial state, neither fulfilled nor rejected.\
+- fulfilled: meaning that the operation completed successfully.\
+- rejected: meaning that the operation failed.\
 A pending promise can either be fulfilled with a value, or rejected with a reason (error). When either of these options happens, the associated handlers queued up by a promise's then method are called. (If the promise has already been fulfilled or rejected when a corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached.)
 
 [Further information about Promises on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
@@ -183,7 +183,7 @@ The DOM can be modified using JavaScript
 > The constructor method is a special method for creating and initializing an object created within a class.  May only have 1 per class. 
 
 #### New
-> reates an instance of a user-defined object type or of one of the built-in object types that has a constructor function.
+> Creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function.
 
 #### Extends
 > Used to create a class which is a child of another class.
@@ -205,12 +205,32 @@ Properties can usually be changed, added, and deleted, but some are read only.\
   3. Reduce DOM Size
   4. Avoid Unnecessary Variables
 
+#### Expressions
+#### template literals
+#### Ref
+#### Immutable
+#### Mutable
+#### Javascript Patterns
+#### Getter
+#### Setter
+
 #### React Reconciliation 
 > Syncing changes in app state to the DOM\
   Reconstructs virtual DOM, diffs against DOM and only makes changes needed.
 
-#### React Components
-> React is componentized for reuse and to break problems down to their simpliest form.  Highly customizable.  
+#### Using React / JavaScript Tools
+> - NPM
+  - Babel
+  - @std/esm
+  - Chrome devtools
+  - React/Redux devtools
+  - ESLint
+    1. Identifies and reports patterns in JavaScript
+    2. Enforces code style rules and ensures it compiles
+  - Prettier
+    1. Rewrites code to adhere to code style
+  - Flow/TypeScript
+
 
 #### JSX 
 > - Javascript XML\
@@ -232,62 +252,205 @@ Properties can usually be changed, added, and deleted, but some are read only.\
   2. Changes in state cause re-renders.
 
 
+#### React Styling
+CSS, inline styles, flexbox, css grid
+
+#### Event Handling ^^^^
+
+#### React Components
+> React is componentized for reuse and to break problems down to their simpliest form.  Highly customizable. Have instances, maintain their own state, have lifecycle methods.  Rendering is a function of props and class properties.
+
+#### Stateless Functional Component(SFC)
+> When dont need state, takes props and returns a node, should be a pure function, any change in props will cause the function to be re-invoked.
+
+#### Pure Function
+> Does not have side effects like setting values and updating arrays.
+
+### Component Life Cycle
+#### Mount
+> 1. constructor(props)\
+  2. render()\
+  3. componentDidMount()
+
+#### Update
+> 1. componentWillReceiveProps(nextProps)
+  2. shouldComponentUpdate(nextProps, nextState)
+  3. render()
+  4. componenetDidUpdate(prevProps, prevState)
+
+#### Unmount
+> 1. componentWillUnmount()
+    clean up, remove event listeners, clear timeouts/intervals
+
+#### Import/Export Components
+> Split components into individual files for better organization.\
+  Import the component, if default export\
+  import NameOfComponent from 'path'\
+  if not default export\
+  import { NameOfComponent} from 'path'
+
+#### PropTypes
+> Validate the types of component props, tool that ensures the correct props passed
+
+#### Controlled Component
+
+#### Smart 
+
+#### Dumb
+
+#### Uncontrolled Component
+
+#### Validate Input
+> componentDidUpdate() 
+
+#### Debugging
+> Chrome Dev Tools, React Dev Tools, React Errors/Warnings, console.log()
+
+#### Routing
+> React Router
+
+#### Higher Order Components
+> Take components as arguments or return components\
+  
+#### Params 
+
+#### Conditionals 
+
+#### Data
+> Get data from APIs, keys
+
+#### JSON
+
+#### API
+> Application Programming Interface\
+  Interacting with a resource, read the API's documentation to understand how to use\
+  1. React components have APIs; interact by passing props
+  2. A class has an API; interact by invoking methods
+  3. A web service has an API; interact by making network requests
+
+#### Network Requests
+> fetch, returns a promise with a response object
+
+#### React Promises
+> asynchronous, non-blocking code allowing chaining of callback and error handlers\
+  1. .then() - executed after the previous Promise block returns
+  2. .catch() - executed if the previous Promise block errors
+
+#### Async/Await
+> async code as if it were synchronous, still non blocking\
+  returns a promise\
+  Use the await keyword to await the of another async function or promise\
+  try/catch to handle errors
+
+#### Authenticaion 
+> 
+
+### HTTP Methods
+#### GET
+> Default in browsers, add parameters in the url by appending ?
+
+#### POST
+> Submit data to an API endpoint, 
+
+#### HTTP Response Codes
+> - 200: OK
+  - 400: Bad Request
+  - 403: Forbidden
+  - 404: Not Found
+  - 500: Internal Server Error
+  - 418: I’m a teapot
+
+### Functional Programming
+
+### Flux
+> Unidirectional data flow\
+  1. The views react to changes in some number of “stores”
+  2. The only thing that can update data in a store is a “dispatcher”
+  3. The only way to trigger the dispatcher is by invoking “actions”
+  4. Actions are triggered from the views
+
+### Redux
+> Data management library, single source of truth for data, state can only be updated by an action that triggers recomputation, updates are made using pure functions/
+  1. Action
+  2. Reducer
+  3. Update Store
+
+#### Reducer
+> Combines previous state and update to create new state\
+  Pure function resulting in no side effects outside of reducer\
+  Immutable
+
+#### Store
+> Maintains and Manages state\
+  Only updated by a dispatch()\
+  add listeners invoked on state changes
+
+#### Actions
+> Data object with the information required to make a state update\
+  Actions creators create actions.\
+  Must be dispatched in order to affect state.
+
+#### Methods associated with redux
+> 1. store.getState()
+  2. store.dispatch()
+  3. create HOC that checks for state updates and passes new props
+
+#### react-redux
+> 1. <Provider /> gives children access to our redux store\
+  2. connect() helps us subscribe to the portion of the store we want, and helps to bind action creators.
+
+#### Redux Async Requests 
+> 
+
+#### Redux Middleware
+> ({getState, dispatch}) => next => action => void\
+
+#### Thunk
+> A thunk is a function that wraps an expression to delay its evaluation
+
+#### Persisting State
+> App can be a pure function of the redux store.\
+  Persist the store by reloading app into the current state\
+
+#### redux-persist
+
+
+#### Container Component
+> aware of redux state
+
+#### Presentational Component
+> aware only of their props
+
+### Performance
+#### Bottlenecks
+
+#### Perf Monitors
+> Chrome Performance Profiler
+
+#### Common Performance Cocerns
+> 1. Unnecessarily rerendering
+      componenets rerender when receiving new props, only subscribe to the parts of state needed, keys, shouldComponentUpdate()
+  2. Changing props
+      Passing unneeded props to a child, object literal in render() will create a new object at each render
+  3. logic in mount/update
+      Adding properties to class instance instead of methods because properties are created at each mount where methods are one time
+
+### Deploying
+
+### Testing
+
+#### Test Pyramid
+> 1. Unit tests
+  
+  2. Integration/Service tests
+  3. UI/End-to-end tests
+
+#### Jest
 
 
 
 
-
-
-
-
-
-Expressions
-template literals
-
-Object literal
-
-
-
-
-Ref
-
-
-
-Functional Programming
-
-
-Contitionals
-- &&
-- if
-
-Class
-
-Event Handling
-
-
-
-Smart / Dumb
-
-Controlled / Uncrolled
-
-Pure Functions
-
-Functional
-
-Component Life Cycle
-- Constructor
-- Render
-
-Javascript Patterns
-
-### Redux Concepts
-
-Store
-
-Connect
-- MapStateToProps
-
-### Contributions:
+## Contributions:
 Add to the list:
 
 Email suggestion to jwgravesfl@gmail.com
