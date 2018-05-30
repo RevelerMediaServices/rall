@@ -8,6 +8,7 @@ If one would like to contribute, one may submite an article or tutorial to [jwgr
 
 # Study List
 
+## Core JavaScript Concepts related to ReactJS
 ### Primitive Types
 > Immutable
 - undefined
@@ -37,16 +38,16 @@ false\
 []\
 Everything else
 
-#### Objects
+### Objects
 > Mutable and stored by reference\
 Almost everything except prmitives are objects
 
-#### Object Literal
+### Object Literal
 > An object literal is a list of zero or more pairs of property names and associated values of an object, enclosed in curly braces ({}). Do not use an object literal at the beginning of a statement. This will lead to an error or not behave as you expect, because the { will be interpreted as the beginning of a block.
 
 [JavaScript ES6 Object Literal Enhancements/Extensions](https://www.youtube.com/watch?v=oHVc0VZG9_8&t=62s)
 
-#### Prototype Inheritance
+### Prototype Inheritance
 > All JavaScript objects inherit properties and methods from a prototype.\
 Date objects inherit from Date.prototype. Array objects inherit from Array.prototype. Person objects inherit from Person.prototype.\
 The Object.prototype is on the top of the prototype inheritance chain:\
@@ -57,19 +58,19 @@ Date objects, Array objects, and Person objects inherit from Object.prototype./
 - Properties/methods defined most tightly to the instance have priority.
 - Recomended not to change prototype because it could change other instances of the prototype.
 
-#### Methods
+### Methods
 > A method is a function which is a property of an object.\
 [List of JavaScript Methods](https://docs.microsoft.com/en-us/scripting/javascript/reference/javascript-methods#methods)\
 [JavaScript methods index](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index)
 
-### Scope
+## Scope
 - Three scopes
   1. Own/Local Scope
   2. Outer Function Scope
   3. Global Scope
 
-#### Hoisting 
-> Lexical scoping (var) - Hoisted\
+### Hoisting 
+> Lexical(function) scoping (var) - Hoisted\
   Variable and function declarations are moved to the top of their containing scope.\
   The word "lexical" refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Nested functions have access to variables declared in their outer scope.\
   From declared until the function ends.
@@ -77,13 +78,27 @@ Date objects, Array objects, and Person objects inherit from Object.prototype./
 > Block Scoping (let and const) - Non Hoisted\
   Until the next } is reached.
 
--- Passing by Reference / by Value.  ^^^^
+### Passing by Reference
+> Refs provide a way to access DOM nodes or React elements created in the render method.\
+Objects and arrays pass by reference.\
+If passed by reference, will change outside function variables after the function is called.\
+Javascript passes by value, value is reference.  
 
--- The Global Object ^^^^
+### Passing by Value
+> Javascript is passed by value.\
+Value is directly passed to function leaving the outer function variables unaffected.  
+
+### Parameters / Arguments
+> Function parameters are the names listed in the function definition.\
+Function arguments are the real values passed to (and received by) the function.
+
+### The Global Object
+> A global object is an object that always exists in the global scope.\
+The window object is the Global Object in the Browser. Any Global Variables or Functions can be accessed as properties of the window object.
 
 #### Closures
 > A closure is the combination of a function and the lexical environment within which that function was declared./
-myFunc(5) & myFunc(10)/
+Allows for instances.  ... myFunc(5) & myFunc(10)/
 They share the same function body definition, but store different lexical environments.\
 Closures are useful because they let you associate some data (the lexical environment) with a function that operates on that data.\
 JavaScript does not provide a native way of doing this, but it is possible to emulate private methods using closures.\
@@ -96,7 +111,7 @@ Doesn't add to or modify global object\
     1. anonymous function with lexical scope within () preventing pollution of global scope
     2. Create the immediately executing function expression ()
 
-#### Anonymouse Function
+#### Anonymous Function
 
 #### First-Class Functions
 > A programming language is said to have First-class functions when functions in that language are treated like any other variable.  Can be assigned to variables, array values and object values.  Can be passed as arguments to other functions and can be returned from functions.
@@ -223,16 +238,15 @@ Properties can usually be changed, added, and deleted, but some are read only.\
   3. Reduce DOM Size
   4. Avoid Unnecessary Variables
 
-
 #### Mixins
 #### template literals
-#### Ref
 #### Immutable
 #### Mutable
 #### Javascript Patterns
 #### Getter
 #### Setter
 
+## React 
 #### React Reconciliation 
 > Syncing changes in app state to the DOM\
   Reconstructs virtual DOM, diffs against DOM and only makes changes needed.
