@@ -47,6 +47,10 @@ Almost everything except prmitives are objects
 
 [JavaScript ES6 Object Literal Enhancements/Extensions](https://www.youtube.com/watch?v=oHVc0VZG9_8&t=62s)
 
+### The Two Programming Paradigms
+> 1. Prototypal Inheritance
+2. Functional Programming
+
 ### Prototype Inheritance
 > All JavaScript objects inherit properties and methods from a prototype.\
 Date objects inherit from Date.prototype. Array objects inherit from Array.prototype. Person objects inherit from Person.prototype.\
@@ -57,6 +61,10 @@ Date objects, Array objects, and Person objects inherit from Object.prototype./
 - Objects store a reference to its prototype.
 - Properties/methods defined most tightly to the instance have priority.
 - Recomended not to change prototype because it could change other instances of the prototype.
+
+1. Delegation
+2. Concatenative
+2. Functional()
 
 ### Methods
 > A method is a function which is a property of an object.\
@@ -166,7 +174,10 @@ n async function can contain an await expression that pauses the execution of th
 5. Spread with many values
 
 ### Functional Programming
-> 
+> Produces programs by composing mathematical functions and avoids shared state & mutable data.
+1. Pure Functions
+2. Avoids Side-Effects and shared state
+3. Declarative
 
 #### First-Class Functions
 > A programming language is said to have First-class functions when functions in that language are treated like any other variable.  Can be assigned to variables, array values and object values.  Can be passed as arguments to other functions and can be returned from functions.
@@ -182,10 +193,38 @@ n async function can contain an await expression that pauses the execution of th
 7. shift()
 
 #### Currying
+> Technique of translating the evaluation of a function that takes multiple arguments into evaluating a sequence of functions, each with a single argument. Returns a single argument.
+
+#### Partial Application
+> Takes in mulitple parameters and can return with less parameters.\
+May not have a predictable outcome.\
+Returns another function with an arity(number of args) of 1 until all have been applied.
 
 #### Recursion
+> The function calling it self.  
+1. the function's name
+2. arguments.callee
+3. an in-scope variable that refers to the function
+
+Key Differences Between Recursion and Iteration
+1. Recursion is when a method in a program repeatedly calls itself whereas, iteration is when a set of instructions in a program are repeatedly executed.
+2. A recursive method contains set of instructions, statement calling itself, and a termination condition whereas iteration statements contain initialization, increment, condition, set of instruction within a loop and a control variable.
+3. A conditional statement decides the termination of recursion and control variable’s value decide the termination of the iteration statement.
+4. If the method does not lead to the termination condition it enters to infinite recursion. On the other hand, if the control variable never leads to the termination value the iteration statement iterates infinitely.
+5. Infinite recursion can lead to system crash whereas, infinite iteration consumes CPU cycles.
+6. Recursion is always applied to method whereas, iteration is applied to set of instruction.
+7. Variables created during recursion are stored on stack whereas, iteration doesn’t require a stack.
+8. Recursion causes the overhead of repeated function calling whereas, iteration does not have a function calling overhead.
+9. Due to function calling overhead execution of recursion is slower whereas, execution of iteration is faster.
+10. Recursion reduces the size of code whereas, iterations make a code longer.
+
+https://techdifferences.com/difference-between-recursion-and-iteration-2.html
 
 #### Immutability
+> Content can not be changed.
+1. Improves performance because of no planning for changes, replace with new object.
+2. Reduce memory use because of object references instead of cloning object.
+3. Thread-safety because multiple threads can reference the same object without interfering with one another.  
 
 #### Pure Function
 > Does not have side effects like setting values and updating arrays. 
@@ -258,14 +297,9 @@ Properties can usually be changed, added, and deleted, but some are read only.\
 
 #### Mixins
 #### template literals
-#### Immutable
-#### Mutable
 #### Javascript Patterns
 #### Getter
 #### Setter
-#### Functional Programming
-#### Currying  ^^^^
-> 
 
 ## React 
 #### React Reconciliation 
@@ -509,3 +543,4 @@ Email suggestion to jwgravesfl@gmail.com
 [Eloquent JavaScript](https://eloquentjavascript.net/)\
 [](https://flaviocopes.com/javascript-functional-programming/)
 [ReactJS Documentation](https://reactjs.org/)
+[10 Interview Questions EJDSK](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95)
