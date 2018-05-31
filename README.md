@@ -72,7 +72,8 @@ Date objects, Array objects, and Person objects inherit from Object.prototype./
 ### Hoisting 
 > Lexical(function) scoping (var) - Hoisted\
   Variable and function declarations are moved to the top of their containing scope.\
-  The word "lexical" refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Nested functions have access to variables declared in their outer scope.\
+#### Lexical 
+> The word "lexical" refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Nested functions have access to variables declared in their outer scope.\
   From declared until the function ends.
 
 > Block Scoping (let and const) - Non Hoisted\
@@ -96,14 +97,14 @@ Function arguments are the real values passed to (and received by) the function.
 > A global object is an object that always exists in the global scope.\
 The window object is the Global Object in the Browser. Any Global Variables or Functions can be accessed as properties of the window object.
 
-#### Closures
+### Closures
 > A closure is the combination of a function and the lexical environment within which that function was declared./
 Allows for instances.  ... myFunc(5) & myFunc(10)/
 They share the same function body definition, but store different lexical environments.\
 Closures are useful because they let you associate some data (the lexical environment) with a function that operates on that data.\
 JavaScript does not provide a native way of doing this, but it is possible to emulate private methods using closures.\
 
-#### Imediately Invoved Function Expression(IIFE)
+### Imediately Invoved Function Expression(IIFE)(Self Invoking Function)
 > function expression that is invoked immediately\
 Creates a closure\
 Doesn't add to or modify global object\
@@ -111,7 +112,61 @@ Doesn't add to or modify global object\
     1. anonymous function with lexical scope within () preventing pollution of global scope
     2. Create the immediately executing function expression ()
 
-#### Anonymous Function
+### Conditionals 
+> Control behavior to determine if a set of code will run.  
+
+### Anonymous Function
+> A function without a name.\
+A functions expression, named function is a statement.
+
+### Arrow Functions
+> shorter syntax than a function expression and does not have its own this, arguments, super, or new.target. These function expressions are best suited for non-method functions, and they cannot be used as constructors.
+
+### Expressions
+> any valid unit of code that resolves to a value.
+
+[MDN Operator and Expressions List](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
+
+### Primary Expressions
+#### this
+> 1. In the global execution context (outside of any function), this refers to the global object whether in strict mode or not.
+2. Inside a function, the value of this depends on how the function is called. Call and Apply are used to pass the value of this to another context.
+3. Bind Method creates a new function with the same body and scope and it is permanently bound to the first argument of bind, regardless of how the function is being used.
+  - Arrow functions this retains the enclosing lexical context's this. 
+
+##### setting 'this' ^^^^
+
+#### Class
+> Defines complex objects with their own prototypes\
+  defines all of the properties that characterize a certain set of objects.  The number of properties can not be changed after the class is defined, but at run time you can add or remove properties on any object. 
+
+##### Static Methods
+> Static method calls are made directly on the class and are not callable on instances of the class. Static methods are often used to create utility functions.
+
+#### Grouping Operator ( )
+>  controls the precedence of evaluation. 
+
+#### Async/Await
+> The async function declaration defines an asynchronous function, which returns an AsyncFunction object.\
+n async function can contain an await expression that pauses the execution of the async function and waits for the passed Promise's resolution, and then resumes the async function's execution and returns the resolved value.
+
+### Left-hand-side expressions
+#### New
+> Creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function.
+
+#### Super
+> Used to access and call functions on an object's parent.
+
+#### Spread Operator ( ... )
+> allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) are expected.  
+1. function calls
+2. array literals
+3. Object Literals
+4. Only for interables
+5. Spread with many values
+
+### Functional Programming
+> 
 
 #### First-Class Functions
 > A programming language is said to have First-class functions when functions in that language are treated like any other variable.  Can be assigned to variables, array values and object values.  Can be passed as arguments to other functions and can be returned from functions.
@@ -126,11 +181,20 @@ Doesn't add to or modify global object\
 6. push()
 7. shift()
 
+#### Currying
 
-#### Currying  ^^^^
-> 
+#### Recursion
 
-#### Single Threaded ^^^^
+#### Immutability
+
+#### Pure Function
+> Does not have side effects like setting values and updating arrays. 
+
+#### Chaining
+
+
+
+#### Single Threaded
 > Javascript is single-threaded, synchronous language
 
 #### Callbacks
@@ -161,56 +225,10 @@ A pending promise can either be fulfilled with a value, or rejected with a reaso
 
 [Further information about Promises on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
-#### Async/Await
-> The async function declaration defines an asynchronous function, which returns an AsyncFunction object.\
-n async function can contain an await expression that pauses the execution of the async function and waits for the passed Promise's resolution, and then resumes the async function's execution and returns the resolved value.
-
-#### Expressions
-> any valid unit of code that resolves to a value.
-
-##### Primary Expressions
-
-###### this
-> 1. In the global execution context (outside of any function), this refers to the global object whether in strict mode or not.
-2. Inside a function, the value of this depends on how the function is called. Call and Apply are used to pass the value of this to another context.
-3. Bind Method creates a new function with the same body and scope and it is permanently bound to the first argument of bind, regardless of how the function is being used.
-  - Arrow functions this retains the enclosing lexical context's this. 
-
-
-###### setting 'this' ^^^^
-
-###### Grouping Operator ( )
->  controls the precedence of evaluation.  
-
-##### Left-hand-side expressions
-###### New
-> Creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function.
-
-###### Super
-> Used to access and call functions on an object's parent.
-
-###### Spread Operator ( ... )
-> allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) are expected.  
-1. function calls
-2. array literals
-3. Object Literals
-4. Only for interables
-5. Spread with many values
-
-###### Rest Parameter ( ... )
-> allows us to represent an indefinite number of arguments as an array.
-
 #### Dom / Virtual Dom
 > Document Object Model\
 Elements(HTML tree like structure)\
 The DOM can be modified using JavaScript
-
-#### Classes
-> Defines complex objects with their own prototypes\
-  defines all of the properties that characterize a certain set of objects.  The number of properties can not be changed after the class is defined, but at run time you can add or remove properties on any object. 
-
-#### Static Methods
-> Static method calls are made directly on the class and are not callable on instances of the class. Static methods are often used to create utility functions.
 
 #### Instances
 > The instantiation of a class.  
@@ -245,6 +263,9 @@ Properties can usually be changed, added, and deleted, but some are read only.\
 #### Javascript Patterns
 #### Getter
 #### Setter
+#### Functional Programming
+#### Currying  ^^^^
+> 
 
 ## React 
 #### React Reconciliation 
@@ -296,9 +317,6 @@ CSS, inline styles, flexbox, css grid
 #### Stateless Functional Component(SFC)
 > When dont need state, takes props and returns a node, should be a pure function, any change in props will cause the function to be re-invoked.
 
-#### Pure Function
-> Does not have side effects like setting values and updating arrays.
-
 ### Component Life Cycle
 #### Mount
 > 1. constructor(props)\
@@ -347,8 +365,6 @@ CSS, inline styles, flexbox, css grid
   
 #### Params 
 
-#### Conditionals 
-
 #### Data
 > Get data from APIs, keys
 
@@ -392,8 +408,6 @@ CSS, inline styles, flexbox, css grid
   - 404: Not Found
   - 500: Internal Server Error
   - 418: I’m a teapot
-
-### Functional Programming
 
 ### Flux
 > Unidirectional data flow\
@@ -493,4 +507,5 @@ Email suggestion to jwgravesfl@gmail.com
 [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)\
 [w3schools.com](https://www.w3schools.com/Js)\
 [Eloquent JavaScript](https://eloquentjavascript.net/)\
+[](https://flaviocopes.com/javascript-functional-programming/)
 [ReactJS Documentation](https://reactjs.org/)
