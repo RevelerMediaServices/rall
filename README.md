@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 # ReactJS Awesome Learn List
-> Rall is intended to be a gathering of ReactJS **free** learning resources.  Although there are other resources for this information, Rall hopes to keep information current and relevant by adding tutorials, articles and other free media by date. Rall also includes a study sheet for ReactJS and related concepts.\
+> Rall is intended to be a gathering of ReactJS **free** learning resources.  Although there are other resources for this information, Rall hopes to keep information current and relevant by adding tutorials, articles and other free media by date. Rall will also include a study sheet for ReactJS and related concepts.\
 
 If one would like to contribute, one may submite an article or tutorial to [jwgravesfl@gmail.com](jwgravesfl@gmail.com).   
 
@@ -135,6 +135,26 @@ A functions expression, named function is a statement.
 
 [MDN Operator and Expressions List](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
 
+### Single Threaded
+> Javascript is single-threaded, synchronous language
+
+### Callbacks
+> A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.  Callbacks can be synchronous and asynchronous.
+
+### Synchronous
+> A synchronous callback is executed immediately. A function that takes a while can cause the page to fail.  
+
+### Asynchronous JavaScript
+> Asynchronous callbacks are often used to continue code execution after an asynchronous operation has completed.\
+  1. Execution(Call) Stack\
+      A mechanism for an interpreter (like the JavaScript interpreter in a web browser) to keep track of its place in a script that calls multiple functions - what function is currently being run, what functions are called from within that function and should be called next, etc.\
+  2. Heap\
+      a method to store a collection of objects in such a way that the smallest element can be quickly found.\
+  3. Queue\
+      One or more functions waiting to run.  queue() method shows the queued functions\
+  4. Event Loop\
+      Never blocking, so when the application is waiting other actions can be taken When functions complete, they are removed from the stack and the frame below continues executing
+
 ### Primary Expressions
 #### this
 > 1. In the global execution context (outside of any function), this refers to the global object whether in strict mode or not.
@@ -191,14 +211,23 @@ n async function can contain an await expression that pauses the execution of th
 5. slice()
 6. push()
 7. shift()
+8. join()
+9. split()
 
-#### Currying
-> Technique of translating the evaluation of a function that takes multiple arguments into evaluating a sequence of functions, each with a single argument. Returns a single argument.
+#### Immutability
+> Content can not be changed.
+1. Improves performance because of no planning for changes, replace with new object.
+2. Reduce memory use because of object references instead of cloning object.
+3. Thread-safety because multiple threads can reference the same object without interfering with one another.  
 
-#### Partial Application
-> Takes in mulitple parameters and can return with less parameters.\
-May not have a predictable outcome.\
-Returns another function with an arity(number of args) of 1 until all have been applied.
+#### Pure Function
+> Does not have side effects like setting values and updating arrays.
+1. Doesnt change parameters that gets passed to it by reference.
+2. Return value is not influenced by anything execpt its input parameters.  Same input / Same Output
+3. While executing nothing is changed outside the function. 
+
+#### Data Transformations
+> Data is changed by creating copies.
 
 #### Recursion
 > The function calling it self.  
@@ -218,42 +247,24 @@ Key Differences Between Recursion and Iteration
 9. Due to function calling overhead execution of recursion is slower whereas, execution of iteration is faster.
 10. Recursion reduces the size of code whereas, iterations make a code longer.
 
+Tech Differences:\
 https://techdifferences.com/difference-between-recursion-and-iteration-2.html
 
-#### Immutability
-> Content can not be changed.
-1. Improves performance because of no planning for changes, replace with new object.
-2. Reduce memory use because of object references instead of cloning object.
-3. Thread-safety because multiple threads can reference the same object without interfering with one another.  
-
-#### Pure Function
-> Does not have side effects like setting values and updating arrays. 
+#### Composition
+> Combing simpler functions to generate higher order functions.
 
 #### Chaining
+> Executing two or more asynchronous operations back to back, where each subsequent operation starts when the previous operation succeeds, with the result from the previous step.
 
+#### Currying
+> Technique of translating the evaluation of a function that takes multiple arguments into evaluating a sequence of functions, each with a single argument. Returns a single argument.
 
+#### Partial Application
+> Takes in mulitple parameters and can return with less parameters.\
+May not have a predictable outcome.\
+Returns another function with an arity(number of args) of 1 until all have been applied.
 
-#### Single Threaded
-> Javascript is single-threaded, synchronous language
-
-#### Callbacks
-> A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.  Callbacks can be synchronous and asynchronous.
-
-#### Synchronous
-> A synchronous callback is executed immediately. A function that takes a while can cause the page to fail.  
-
-#### Asynchronous JavaScript
-> Asynchronous callbacks are often used to continue code execution after an asynchronous operation has completed.\
-  1. Execution(Call) Stack\
-      A mechanism for an interpreter (like the JavaScript interpreter in a web browser) to keep track of its place in a script that calls multiple functions - what function is currently being run, what functions are called from within that function and should be called next, etc.\
-  2. Heap\
-      a method to store a collection of objects in such a way that the smallest element can be quickly found.\
-  3. Queue\
-      One or more functions waiting to run.  queue() method shows the queued functions\
-  4. Event Loop\
-      Never blocking, so when the application is waiting other actions can be taken When functions complete, they are removed from the stack and the frame below continues executing/
-
-#### Promises
+### Promises
 > A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.\
 
 > A Promise is in one of these states:
@@ -264,27 +275,63 @@ A pending promise can either be fulfilled with a value, or rejected with a reaso
 
 [Further information about Promises on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
-#### Dom / Virtual Dom
+### Dom / Virtual Dom
 > Document Object Model\
 Elements(HTML tree like structure)\
 The DOM can be modified using JavaScript
 
-#### Instances
+### Instances
 > The instantiation of a class.  
 
-#### Methods
+### Methods
 > A method is a function which is a property of an object.
 
-#### Constructor
+### Constructor
 > The constructor method is a special method for creating and initializing an object created within a class.  May only have 1 per class. 
 
-#### Extends
+### Extends
 > Used to create a class which is a child of another class.
 
-#### Properties
+### Properties
 > Properties are the values associated with a JavaScript object.\
 A JavaScript object is a collection of unordered properties.\
 Properties can usually be changed, added, and deleted, but some are read only.\
+
+### Mixins
+> Class or interface in which some or all of its methods and/or properties are unimplemented, requiring that another class or interface provide the missing implementations.
+
+### template literals
+> Template literals are enclosed by the back-tick (` `), placeholders are indicated by the dollar sign and curly braces (${expression}) and the expression in the placeholder is passed to a function.  
+
+### Javascript Patterns
+> Design patterns are reusable solutions to commonly occurring problems in software design.
+
+#### Constructor Pattern
+> Initializes a newly created object properties and methods from a prototype that prepares the object for use and for accepting arguments.
+
+#### Module Pattern
+> Help in keeping the units of code for a project both cleanly separated and organized.\
+Used to emulate classes in a way to include public and private methods and variables inside a single object.  Helps with conflicting names.
+1. The Reavealing Module Pattern\
+Creats a private scope and returns an anonymous object with pointers to private functionality.
+
+#### Observer Pattern
+> Interested in the state of a subject and register their interest with the subject by attaching themselves.\
+1. Publish/Subscribe\
+Uses a topic/event channel which sits between the objects wishing to receive notifications (subscribers) and the object firing the event (the publisher)
+
+#### Singleton Pattern
+> Restricts instantiation of a class to a single object.  
+
+### Destructuring
+> 
+
+#### 
+
+#### Getter
+#### Setter
+
+## React 
 
 #### Declarative
 > React is declarative meaning declare what you want.  
@@ -295,13 +342,6 @@ Properties can usually be changed, added, and deleted, but some are read only.\
   3. Reduce DOM Size
   4. Avoid Unnecessary Variables
 
-#### Mixins
-#### template literals
-#### Javascript Patterns
-#### Getter
-#### Setter
-
-## React 
 #### React Reconciliation 
 > Syncing changes in app state to the DOM\
   Reconstructs virtual DOM, diffs against DOM and only makes changes needed.
@@ -537,10 +577,21 @@ Add to the list:
 Email suggestion to jwgravesfl@gmail.com
 
 ### References and Information Sources
-[CS50 Mobile App with React Native](https://cs50.github.io/mobile/)\
+Class\
+May 2018 [CS50 Mobile App with React Native](https://cs50.github.io/mobile/)\
+
+Websites\
 [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)\
 [w3schools.com](https://www.w3schools.com/Js)\
-[Eloquent JavaScript](https://eloquentjavascript.net/)\
-[](https://flaviocopes.com/javascript-functional-programming/)
 [ReactJS Documentation](https://reactjs.org/)
-[10 Interview Questions EJDSK](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95)
+
+Articles\
+February 2018 - [AN INTRODUCTION TO FUNCTIONAL PROGRAMMING WITH JAVASCRIPT](https://flaviocopes.com/javascript-functional-programming/)
+
+Books\
+2017 - [Learning JavaScript Design Patterns - Addy Osmani Volume 1.7](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+[Eloquent JavaScript](https://eloquentjavascript.net/)\
+2013 - Functional JavaScript - Michael Fogus - First Edition
+
+Github Repo\
+January 2018 - [React Patterns](https://reactpatterns.com/)
