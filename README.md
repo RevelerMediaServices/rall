@@ -82,10 +82,11 @@ Date objects, Array objects, and Person objects inherit from Object.prototype./
   Variable and function declarations are moved to the top of their containing scope.\
 #### Lexical 
 > The word "lexical" refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Nested functions have access to variables declared in their outer scope.\
-  From declared until the function ends.
+From declared until the function ends.\
+1. Child functions contain the scope of the parent function.
 
 > Block Scoping (let and const) - Non Hoisted\
-  Until the next } is reached.
+Until the next } is reached.
 
 ### Passing by Reference
 > Refs provide a way to access DOM nodes or React elements created in the render method.\
@@ -148,10 +149,12 @@ A functions expression, named function is a statement.
 > Asynchronous callbacks are often used to continue code execution after an asynchronous operation has completed.\
   1. Execution(Call) Stack\
       A mechanism for an interpreter (like the JavaScript interpreter in a web browser) to keep track of its place in a script that calls multiple functions - what function is currently being run, what functions are called from within that function and should be called next, etc.\
+      First in Last Out
   2. Heap\
       a method to store a collection of objects in such a way that the smallest element can be quickly found.\
   3. Queue\
       One or more functions waiting to run.  queue() method shows the queued functions\
+      First in First Out
   4. Event Loop\
       Never blocking, so when the application is waiting other actions can be taken When functions complete, they are removed from the stack and the frame below continues executing
 
@@ -300,7 +303,7 @@ Properties can usually be changed, added, and deleted, but some are read only.\
 ### Mixins
 > Class or interface in which some or all of its methods and/or properties are unimplemented, requiring that another class or interface provide the missing implementations.
 
-### template literals
+### Template Literals
 > Template literals are enclosed by the back-tick (` `), placeholders are indicated by the dollar sign and curly braces (${expression}) and the expression in the placeholder is passed to a function.  
 
 ### Javascript Patterns
@@ -324,12 +327,38 @@ Uses a topic/event channel which sits between the objects wishing to receive not
 > Restricts instantiation of a class to a single object.  
 
 ### Destructuring
-> 
+> JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
 
-#### 
+> const { first, last } = person\
+instead of\
+const first = person.first;
+const last = person.last;
 
-#### Getter
-#### Setter
+### Getter
+> Binds an object property to a function that will be called when that property is looked up.\
+Can allow access to a property that returns a dynamically computed value\
+Can reflect the status of an internal variable without requiring the use of explicit method calls.
+
+### Setter
+> Binds an object property to a function to be called when there is an attempt to set that property.\
+Can be used to execute a function whenever a specified property is attempted to be changed.
+
+### Ref 
+
+## JS Versions
+### ECMAScript 7(2016)
+#### Exponential Operator (**)
+
+#### Array.prototype.includes
+
+###  ECMAScript 8(2017)
+#### String Padding
+
+#### new Object Properties
+
+#### Async Functions
+
+#### Shared Memory
 
 ## React 
 
