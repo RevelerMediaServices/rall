@@ -343,22 +343,32 @@ Can reflect the status of an internal variable without requiring the use of expl
 > Binds an object property to a function to be called when there is an attempt to set that property.\
 Can be used to execute a function whenever a specified property is attempted to be changed.
 
-### Ref 
+### Refs
+> Provide a way to access DOM nodes or React elements created in the render method. 
+
+1. Managing focus, text selection or media playback.
+2. Triggering imperative animations.
+3. Integrating with third-party DOM libraries.
 
 ## JS Versions
 ### ECMAScript 7(2016)
 #### Exponential Operator (**)
+> x ** y same as Math.pow(x, y)
 
 #### Array.prototype.includes
+> Determines whether an array includes a certain element.  
 
 ###  ECMAScript 8(2017)
 #### String Padding
+> padString() method pads the current string with another string (repeated, if needed) so that the resulting string reaches the given length.
+
+> padEnd() method pads the current string with a given string (repeated, if needed) so that the resulting string reaches a given length.
 
 #### new Object Properties
+> Object.values(obj)
 
-#### Async Functions
+> Object.entries(obj)
 
-#### Shared Memory
 
 ## React 
 
@@ -397,6 +407,11 @@ Can be used to execute a function whenever a specified property is attempted to 
     returns a node that React can render\
     receives properties object
 
+#### React Refs
+> Used to get reference to a DOM(Document Object Model) node or an instance of a component.
+
+[Ankit Singh - Refs in React: All you need to know](https://hackernoon.com/refs-in-react-all-you-need-to-know-fb9c9e2aeb81)
+
 #### React Props 
 > The Properties object passed to a component and used to compute the returned node.\
   Unidirectional data flow
@@ -408,9 +423,17 @@ Can be used to execute a function whenever a specified property is attempted to 
   1. setState() calls are batched and run asynchronously, causing multiple setState() calls to be ignored.  Pass setState an object or a function of previous state.
   2. Changes in state cause re-renders.
 
+#### React Context
 
 #### React Styling
-CSS, inline styles, flexbox, css grid
+
+##### CSS
+
+##### inline styles
+
+##### Styled Components
+
+##### Flexbox and CSS grid
 
 #### Event Handling ^^^^
 
@@ -462,6 +485,8 @@ CSS, inline styles, flexbox, css grid
 
 #### Routing
 > React Router
+
+[TylerMcginnis.com - Route Config with React Router v4](https://tylermcginnis.com/react-router-route-config/)
 
 #### Higher Order Components
 > Take components as arguments or return components\
