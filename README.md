@@ -445,8 +445,8 @@ Can be used to execute a function whenever a specified property is attempted to 
 
 ### Component Life Cycle
 #### Mount
-> 1. constructor(props)\
-  2. render()\
+> 1. constructor(props)
+  2. render()
   3. componentDidMount()
 
 #### Update
