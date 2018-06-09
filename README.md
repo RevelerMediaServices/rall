@@ -473,10 +473,31 @@ class ComponentName extends React Componenet {
 ##### React State
 > Internally managed configuration of a component
 1. this.state is a prop of component instances
-2. Update state with this.setState()
+2. **this.setState()**
      1. setState() calls are batched and run asynchronously, causing multiple setState() calls to be ignored
      2. Pass setState an object or a function of previous state
-3. Changes in state cause re-renders.
+     3. 
+3. Changes in state cause re-renders
+4. Do not modify state directly
+     1. use setState() see below example **a**
+     2. the only place to assign this.state is the constructor
+5.  State Updates Asynchronous
+     1. React may batch multiple setState calls
+     2. Could be unreliable
+     3. second form of setState accepts a function rather than object
+     4. The function receives previous state and props see below example **b**
+6. State Updates are Merged
+     1. May contain several independent variables
+     2. Can update them with separate setState calls
+     3. Merging is shallow replacing only the variables changed
+
+**a**
+this.setState({ user: 'jwgravesfl'})
+
+**b** 
+this.setState((prevState, props) => ({
+  counter: prevState.counter + props.increment
+}))
 
 #### Component Life Cycle
 #### Mount
@@ -501,7 +522,14 @@ constructor(props) {
      3. Fired on every render regardless of cause
      4. Calculate next state based on a change in props
      5. Some use cases use this for calculation and combine with componentDidUpdate() for a side effect
+     6. Good place for a timer
 
+componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
 
 
 3. render()
@@ -549,6 +577,12 @@ constructor(props) {
 #### Unmount
 > clean up, remove event listeners, clear timeouts/intervals
 1. componentWillUnmount()
+     1. Tear down in componentWillUnmount 
+
+componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
 
 #### Error Handling
 > Called when there is an error
