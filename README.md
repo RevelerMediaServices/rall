@@ -160,12 +160,15 @@ A functions expression, named function is a statement.
 
 ### Primary Expressions
 #### this
-> 1. In the global execution context (outside of any function), this refers to the global object whether in strict mode or not.
+1. In the global execution context (outside of any function), this refers to the global object whether in strict mode or not.
 2. Inside a function, the value of this depends on how the function is called. Call and Apply are used to pass the value of this to another context.
 3. Bind Method creates a new function with the same body and scope and it is permanently bound to the first argument of bind, regardless of how the function is being used.
   - Arrow functions this retains the enclosing lexical context's this. 
 
-##### setting 'this' ^^^^
+##### binding 'this'
+1. Class Methods are not bound by default
+2. forgetting to bind a function passed will result undefined
+
 
 #### Class
 > Defines complex objects with their own prototypes\
@@ -419,7 +422,8 @@ Can be used to execute a function whenever a specified property is attempted to 
 
 [Ankit Singh - Refs in React: All you need to know](https://hackernoon.com/refs-in-react-all-you-need-to-know-fb9c9e2aeb81)
 
-
+### React
+> top down unidirectional data flow
 
 ### Components
 > Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. React is componentized for reuse and to break problems down to their simpliest form.  Have instances, maintain their own state, have lifecycle methods.  Rendering is a function of props and class properties.
@@ -427,6 +431,7 @@ Can be used to execute a function whenever a specified property is attempted to 
 2. Defined by Functional or Class Component
 3. has props
 4. can be used in other components
+5. Shouldnt 
 
 #### React Props 
 > The Properties object passed to a component and used to compute the returned node
@@ -457,6 +462,13 @@ function Welcome(props) {
 3. Maintain its own state
 4. has lifecyles
 5. rendering is a function of props and class properties
+6. can pass state down as props to user-defined components
+
+<RandomComponent user={this.state.user} />
+
+function RandomComponent(props) {
+  {props.user}
+}
 
 ###### 4 steps to converting a functional component to a class
 1. Create an ES6 class that extends the Component
@@ -583,11 +595,85 @@ componentWillUnmount() {
     clearInterval(this.timerID);
   }
 
-
 #### Error Handling
 > Called when there is an error
 1. componentDidCatch()
-- 
+
+#### Event Handling
+> Look up a good definition
+1. Use camelCase
+2. Pass as a function not a string **a**
+3. cannot return false to prevent default behavior
+4. must call preventDefault explicitly **b**
+5. Typically a method of a class
+6. this
+     1. bind in the constructor **c**
+     2. public class fields syntax **d**
+     3. not recomended - arrow function in the call back **e**
+7. Passing Event Handlers
+     1. Arrow Functions **f**
+     2. Function.prototype.bind **g**
+
+**a**
+<button onClick={handleClick}>
+  Handle Click
+</button> 
+
+**b**
+function handleClick(e) {
+    e.preventDefault();
+    console.log('The link was clicked.');
+  }
+
+**c**
+constructor(props) {
+    super(props)
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+**d**
+handleClick = () => {
+    console.log('this is:', this);
+  }
+
+**e**
+ <button onClick={(e) => this.handleClick(e)}>
+        Click me
+      </button>
+
+**f** <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>\
+**g** <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+
+#### Conditional Rendering
+> Render only some components based on state
+1. if 
+    function RandomFunction(props) {
+      const isThisTrue = props.isThisTrue
+      if (isThisTrue) {
+        return <AnotherRandomComponent />
+      }
+      return <AThirdRandomComponent />
+    }
+2. Element Variables
+    const button = isThisTrue ? (
+      <RandomComponent onClick={this.handleLogoutClick} />
+    ) : (
+      <LoginButton onClick={this.handleLoginClick} />
+    )
+3. Inline Conditional Operator
+      {isThisTrue ? 'Yes' : 'No'}\
+      {isThisTrue ? (
+        <RandomComponent onClick={this.handleTrueClick} />
+      ) : (
+        <AnotherRandomComponenet onClick={this.handleFalseClick} />
+      )}
+
+#### Lists and Keys
+> 
+
+   
+
 
 #### React Context
 
@@ -601,7 +687,7 @@ componentWillUnmount() {
 
 ##### Flexbox and CSS grid
 
-#### Event Handling ^^^^
+
 
 
 
