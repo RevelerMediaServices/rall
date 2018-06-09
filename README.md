@@ -227,7 +227,12 @@ n async function can contain an await expression that pauses the execution of th
 > Does not have side effects like setting values and updating arrays.
 1. Doesnt change parameters that gets passed to it by reference.
 2. Return value is not influenced by anything execpt its input parameters.  Same input / Same Output
-3. While executing nothing is changed outside the function. 
+3. While executing nothing is changed outside the function
+4. always return the same output when given the same input 
+
+function sum(a, b) {
+  return a + b;
+}
 
 #### Data Transformations
 > Data is changed by creating copies.
@@ -373,35 +378,33 @@ Can be used to execute a function whenever a specified property is attempted to 
 ## React 
 
 #### Functions and Classes 
-
-
-
 #### Declarative
-> React is declarative meaning declare what you want.  
+> React is declarative meaning declare what you want
 
 #### Performant
-> 1. Reduce Activity in Loops
-  2. Reduce DOM Access
-  3. Reduce DOM Size
-  4. Avoid Unnecessary Variables
+> Ways to create a better performing app
+   1. Reduce Activity in Loops
+   2. Reduce DOM Access
+   3. Reduce DOM Size
+   4. Avoid Unnecessary Variables
 
 #### React Reconciliation 
-> Syncing changes in app state to the DOM\
-  Reconstructs virtual DOM, diffs against DOM and only makes changes needed.
+> Compares the newly returned element with the previously rendered one, and if they are not equal updates the Dom
+   1. Syncs changes in app state with DOM
+   2. Diffs against existing DOM and only makes changes needed
 
 #### Using React / JavaScript Tools
-> - NPM
-  - Babel
-  - @std/esm
-  - Chrome devtools
-  - React/Redux devtools
-  - ESLint
-    1. Identifies and reports patterns in JavaScript
-    2. Enforces code style rules and ensures it compiles
-  - Prettier
-    1. Rewrites code to adhere to code style
-  - Flow/TypeScript
-
+1. NPM
+2. Babel
+3. @std/esm
+4. Chrome devtools
+5. React/Redux devtools
+6. ESLint
+     1. Identifies and reports patterns in JavaScript
+     2. Enforces code style rules and ensures it compiles
+7. Prettier
+     1. Rewrites code to adhere to code style 
+8. Flow/Typescript
 
 #### JSX 
 > - Javascript XML\
@@ -416,16 +419,141 @@ Can be used to execute a function whenever a specified property is attempted to 
 
 [Ankit Singh - Refs in React: All you need to know](https://hackernoon.com/refs-in-react-all-you-need-to-know-fb9c9e2aeb81)
 
-#### React Props 
-> The Properties object passed to a component and used to compute the returned node.\
-  Unidirectional data flow
 
-#### React State
-> Internally managed configuration of a component.\
-  this.state is a prop of component instances\
-  Update state with this.setState()\
-  1. setState() calls are batched and run asynchronously, causing multiple setState() calls to be ignored.  Pass setState an object or a function of previous state.
-  2. Changes in state cause re-renders.
+
+### Components
+> Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. React is componentized for reuse and to break problems down to their simpliest form.  Have instances, maintain their own state, have lifecycle methods.  Rendering is a function of props and class properties.
+1. Like JavaScript Functions
+2. Defined by Functional or Class Component
+3. has props
+4. can be used in other components
+
+#### React Props 
+> The Properties object passed to a component and used to compute the returned node
+1. Read Only
+2. All React components must act like pure functions with respect to their props
+
+#### Element
+> the most general base class from which all objects in a Document inherit
+
+#### Stateless Functional Component(SFC)
+> When dont need state, takes props and returns a node, should be a pure function, any change in props will cause the function to be re-invoked.
+
+#### Fuctional Component
+> Called functional because it is literally a javascript function
+1. accepts a single argument "props"
+2. Does not have access to State
+
+<Welcome user={props.user} >
+
+function Welcome(props) {
+  return {user.name}
+}
+
+#### ES6 Class Component 
+> Classes have additional features
+1. Local state is only available to classes
+2. Have instances
+3. Maintain its own state
+4. has lifecyles
+5. rendering is a function of props and class properties
+
+###### 4 steps to converting a functional component to a class
+1. Create an ES6 class that extends the Component
+2. Add an empty method called render()
+3. move the body of the function in the render method
+4. replace props with this.props in the render() body
+
+class ComponentName extends React Componenet {
+  render() {
+    {this.props.name}
+  }
+}
+
+##### React State
+> Internally managed configuration of a component
+1. this.state is a prop of component instances
+2. Update state with this.setState()
+     1. setState() calls are batched and run asynchronously, causing multiple setState() calls to be ignored
+     2. Pass setState an object or a function of previous state
+3. Changes in state cause re-renders.
+
+#### Component Life Cycle
+#### Mount
+> These methods are called when an instance of a component is being created and inserted into the DOM. These lifecycle methods are called in this order when a page is loading.  State must be set in one of the first 2 or it will be rendered without state.  
+1. constructor(props)
+     1. state = {  }
+     2. called before component is mounted
+     3. should add super(props) before any other statement
+     4. The right place to initialize state
+     5. Don't try to call setState()
+     6. Can be used to bind event handlers to the class - instance
+     7. if no need to initialize state or bind methods, no need for the constructor
+
+constructor(props) {
+    super(props);
+    this.state = { };
+  }
+
+2. getDerivedStateFromProps()
+     1. Static method called right before the render method both on initial mount and updates
+     2. Should return an object to update state or null
+     3. Fired on every render regardless of cause
+     4. Calculate next state based on a change in props
+     5. Some use cases use this for calculation and combine with componentDidUpdate() for a side effect
+
+
+
+3. render()
+     1. Required
+     2. Returns a React Element, String or Numbes, Portals, null or Boolean
+     3. The render() function should be pure
+     4. Will not be invoked if shouldComponentUpdate returns false
+
+
+
+4. componentDidMount()
+     1. Invoked immediately after a component mounts
+     2. good place to instantiate newtwork requests
+     3. Iniialization that requre DOM nodes should go here
+     4. good for side-effects and subscriptions, unsubscribe in compneneWillUnmount
+     5. if one needs to interact with the browser
+     6. setState() will trigger an extra rendering, but it will happen before updates so the user wont see both
+
+#### Update
+> When a component is clicked and the state is changed these Lifecycle methods are called.
+1. componentWillReceiveProps(nextProps)
+- **Do Not Use**
+2. static getDerivedStateFromProps()
+     1. see above
+3. shouldComponentUpdate(nextProps, nextState)
+     1. To let a React component know if its output is not affected
+     2. Default is re-render on every state change
+     3. Not called on initial render or forceUpdate()
+     4. If returns false, render and componentDidUpdate will not be invoked
+     5. may change component to inherit from React.PureComponent which implements a shallow prop and state comparison
+4. componentWillUpdate()
+     1. **Do Not Use**
+5. render()
+     1. see above 
+6. getSnapshotBeforeUpdate()
+     1. Invoked before the the rendered output is commited to the DOM
+     2. Allows the capture of current state values before they are changed
+     3. Values return from this lifecycle are passed to componentDidUpdate
+7. componenetDidUpdate(prevProps, prevState)
+     1. Invoked immediately after updating
+     2. Not called on initial render
+     3. Good place for network requests
+     4. getSnapshotBeforeUpdate returns third parameter passed to this lifecycel, else it is undefined
+
+#### Unmount
+> clean up, remove event listeners, clear timeouts/intervals
+1. componentWillUnmount()
+
+#### Error Handling
+> Called when there is an error
+1. componentDidCatch()
+- 
 
 #### React Context
 
@@ -441,63 +569,8 @@ Can be used to execute a function whenever a specified property is attempted to 
 
 #### Event Handling ^^^^
 
-#### React Components
-> React is componentized for reuse and to break problems down to their simpliest form.  Highly customizable. Have instances, maintain their own state, have lifecycle methods.  Rendering is a function of props and class properties.
-
-#### Stateless Functional Component(SFC)
-> When dont need state, takes props and returns a node, should be a pure function, any change in props will cause the function to be re-invoked.
-
-### Component Life Cycle
-#### Mount
-> These methods are called when an instance of a component is being created and inserted into the DOM. These lifecycle methods are called in this order when a page is loading.  State must be set in one of the first 2 or it will be rendered without state.  
-
-1. constructor(props)
-  1. called before component is mounted
-  2. should add super(props) before any other statement
-  3. The right place to initialize state
-  4. Don't try to call setState()
-  5. Can be used to bind event handlers to the class   - instance
-  6. if no need to initialize state or bind methods, no need for the constructor
-2. getDerivedStateFromProps()
-  1. Static method called right before the render method both on initial mount and updates
-  2. Should return an object to update state or null
-  3. Fired on every render regardless of cause
-  4. Calculate next state based on a change in props
-  5. Some use cases use this for calculation and combine with componentDidUpdate() for a side effect
-3. render()
-  1. Required
-  2. Returns a React Element, String or Numbes, Portals, null or Boolean
-  3. The render() function should be pure
-  4. Will not be invoked if shouldComponentUpdate returns false
-4. componentDidMount()
-  1. Invoked immediately after a component mounts
-  2. Iniialization that requre DOM nodes should go here
-  3. good for side-effects and subscriptions, unsubscribe in compnonetWillUnmount
-  4. if one needs to interact with the browser
-  5. setState() will trigger an extra rendering, but it will happen before updates so the user wont see both
-
-#### Update
-> When a component is clicked and the state is changed these Lifecycle methods are called:
-1. componentWillReceiveProps(nextProps)
-  1. **Do Not Use**
-  2. 
-2. static getDerivedStateFromProps()
-3. shouldComponentUpdate(nextProps, nextState)
-4. componentWillUpdate()
-5. render()
-6. getSnapshotBeforeUpdate()
-7. componenetDidUpdate(prevProps, prevState)
 
 
-1. shouldComponentUpdate
-2. render
-3. getSnapshotBeforeUpdate
-4. componenetDidUpdate
-
-
-#### Unmount
-> 1. componentWillUnmount()
-    clean up, remove event listeners, clear timeouts/intervals
 
 #### Import/Export Components
 > Split components into individual files for better organization.\
