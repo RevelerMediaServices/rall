@@ -451,29 +451,29 @@ Can be used to execute a function whenever a specified property is attempted to 
 #### Mount
 > These methods are called when an instance of a component is being created and inserted into the DOM. These lifecycle methods are called in this order when a page is loading.  State must be set in one of the first 2 or it will be rendered without state.  
 1. constructor(props)
-  1. called before component is mounted
-  2. should add super(props) before any other statement
-  3. The right place to initialize state
-  4. Don't try to call setState()
-  5. Can be used to bind event handlers to the class   instance
-  6. if no need to initialize state or bind methods, no need for the constructor
+- called before component is mounted
+- should add super(props) before any other statement
+- The right place to initialize state
+- Don't try to call setState()
+- Can be used to bind event handlers to the class   - instance
+- if no need to initialize state or bind methods, no need for the constructor
 2. getDerivedStateFromProps()
-  1. Static method called right before the render method both on initial mount and updates.
-  2.  Should return an object to update state or null
-  3.  Fired on every render regardless of cause
-  4.  Calculate next state based on a change in props
-  5.  Some use cases use this for calculation and combine with componentDidUpdate() for a side effect
+- Static method called right before the render method both on initial mount and updates.
+- Should return an object to update state or null
+- Fired on every render regardless of cause
+- Calculate next state based on a change in props
+- Some use cases use this for calculation and combine with componentDidUpdate() for a side effect
 3. render()
-  1. Required
-  2. Returns a React Element, String or Numbes, Portals, null or Boolean
-  3. The render() function should be pure
-  4. Will not be invoked if shouldComponentUpdate returns false
+- Required
+- Returns a React Element, String or Numbes, Portals, null or Boolean
+- The render() function should be pure
+- Will not be invoked if shouldComponentUpdate returns false
 4. componentDidMount()
-  1. Invoked immediately after a component mounts
-  2. Iniialization that requre DOM nodes should go here.
-  3. good for side-effects and subscriptions, unsubscribe in compneneWillUnmount
-  4. if one needs to interact with the browser
-  5. setState() will trigger an extra rendering, but it will happen before updates so the user wont see both
+- Invoked immediately after a component mounts
+- Iniialization that requre DOM nodes should go here.
+- good for side-effects and subscriptions, unsubscribe in compneneWillUnmount
+- if one needs to interact with the browser
+- setState() will trigger an extra rendering, but it will happen before updates so the user wont see both
 
 #### Update
 > When a component is clicked and the state is changed these Lifecycle methods are called:
