@@ -455,7 +455,7 @@ Can be used to execute a function whenever a specified property is attempted to 
   2. should add super(props) before any other statement
   3. The right place to initialize state
   4. Don't try to call setState()
-  5. Can be used to bind event handlers to the class instance
+  5. Can be used to bind event handlers to the class   instance
   6. if no need to initialize state or bind methods, no need for the constructor
 2. getDerivedStateFromProps()
   1. Static method called right before the render method both on initial mount and updates.
