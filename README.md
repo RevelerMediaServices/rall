@@ -380,6 +380,16 @@ Can be used to execute a function whenever a specified property is attempted to 
 
 ## React 
 
+#### React Styling
+
+##### CSS
+
+##### inline styles
+
+##### Styled Components
+
+##### Flexbox and CSS grid
+
 #### Functions and Classes 
 #### Declarative
 > React is declarative meaning declare what you want
@@ -441,13 +451,11 @@ Can be used to execute a function whenever a specified property is attempted to 
 #### Element
 > the most general base class from which all objects in a Document inherit
 
-#### Stateless Functional Component(SFC)
+#### Stateless Functional Component(SFC) **Dumb**
 > When dont need state, takes props and returns a node, should be a pure function, any change in props will cause the function to be re-invoked.
-
-#### Fuctional Component
-> Called functional because it is literally a javascript function
-1. accepts a single argument "props"
-2. Does not have access to State
+1. Called functional because it is literally a javascript function
+2. accepts a single argument "props"
+3. Does not have access to State
 
 <Welcome user={props.user} >
 
@@ -455,7 +463,7 @@ function Welcome(props) {
   return {user.name}
 }
 
-#### ES6 Class Component 
+#### Stateful ES6 Class Component **Smart**
 > Classes have additional features
 1. Local state is only available to classes
 2. Have instances
@@ -469,6 +477,15 @@ function Welcome(props) {
 function RandomComponent(props) {
   {props.user}
 }
+
+#### Controlled Component
+> combines form element state with React state making React state the single source of truth
+1. Should use controlled components whenever possible
+2. straight forward to modify or validate user input
+
+#### Uncontrolled Component
+>  form data is handled by the DOM itself, keeps source of truth in the DOM
+1. Use a ref to get form values instead of every state update
 
 ###### 4 steps to converting a functional component to a class
 1. Create an ES6 class that extends the Component
@@ -672,25 +689,6 @@ handleClick = () => {
 #### Lists and Keys
 > 
 
-   
-
-
-#### React Context
-
-#### React Styling
-
-##### CSS
-
-##### inline styles
-
-##### Styled Components
-
-##### Flexbox and CSS grid
-
-
-
-
-
 
 #### Import/Export Components
 > Split components into individual files for better organization.\
@@ -702,13 +700,7 @@ handleClick = () => {
 #### PropTypes
 > Validate the types of component props, tool that ensures the correct props passed
 
-#### Controlled Component
 
-#### Smart 
-
-#### Dumb
-
-#### Uncontrolled Component
 
 #### Validate Input
 > componentDidUpdate() 
@@ -769,6 +761,8 @@ handleClick = () => {
   - 404: Not Found
   - 500: Internal Server Error
   - 418: I’m a teapot
+
+### React Context
 
 ### Flux
 > Unidirectional data flow\
