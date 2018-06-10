@@ -210,15 +210,6 @@ n async function can contain an await expression that pauses the execution of th
 
 #### Higher-Order Functions
 > Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions.
-1. map()
-2. filter()
-3. reduce()
-4. concat()
-5. slice()
-6. push()
-7. shift()
-8. join()
-9. split()
 
 #### Immutability
 > Content can not be changed.
@@ -478,15 +469,6 @@ function RandomComponent(props) {
   {props.user}
 }
 
-#### Controlled Component
-> combines form element state with React state making React state the single source of truth
-1. Should use controlled components whenever possible
-2. straight forward to modify or validate user input
-
-#### Uncontrolled Component
->  form data is handled by the DOM itself, keeps source of truth in the DOM
-1. Use a ref to get form values instead of every state update
-
 ###### 4 steps to converting a functional component to a class
 1. Create an ES6 class that extends the Component
 2. Add an empty method called render()
@@ -687,36 +669,54 @@ handleClick = () => {
       )}
 
 #### Lists and Keys
-> 
+>  A “key” is a special string attribute that helps React identify which items have been changed.
+1. Indexes not recommended
+2. Keys must be unique only amongst siblings.
 
+1. map()
+2. filter()
+3. reduce()
+4. concat()
+5. slice()
+6. push()
+7. shift()
+8. join()
+9. split()
+
+### Forms
+#### Controlled Component
+> combines form element state with React state making React state the single source of truth
+1. Should use controlled components whenever possible
+2. straight forward to modify or validate user input
+     1. textarea and select 
+         1. uses a value attribute instead of being defined by its children
+         2. can be initiated to hold text in the constructor
+3. name attribute for multiple inputs
+4.  
+
+#### Uncontrolled Component
+>  form data is handled by the DOM itself, keeps source of truth in the DOM
+1. Use a ref to get form values instead of every state update
+2. File Upload is always an uncontrolled component
 
 #### Import/Export Components
-> Split components into individual files for better organization.\
-  Import the component, if default export\
-  import NameOfComponent from 'path'\
-  if not default export\
-  import { NameOfComponent} from 'path'
+> Split components into individual files for better organization
+1. if default export **import NameOfComponent from 'path'**
+2. if not default export **import { NameOfComponent} from 'path'**
+
+#### Lifting Up State
+> Moving the state up to the closest common ancestor
+
+Read entire page again
+[Reactjs.org Lifting Up State](https://reactjs.org/docs/lifting-state-up.html)
 
 #### PropTypes
 > Validate the types of component props, tool that ensures the correct props passed
-
-
-
-#### Validate Input
-> componentDidUpdate() 
-
-#### Debugging
-> Chrome Dev Tools, React Dev Tools, React Errors/Warnings, console.log()
 
 #### Routing
 > React Router
 
 [TylerMcginnis.com - Route Config with React Router v4](https://tylermcginnis.com/react-router-route-config/)
-
-#### Higher Order Components
-> Take components as arguments or return components\
-  
-#### Params 
 
 #### Data
 > Get data from APIs, keys
@@ -724,11 +724,11 @@ handleClick = () => {
 #### JSON
 
 #### API
-> Application Programming Interface\
-  Interacting with a resource, read the API's documentation to understand how to use\
-  1. React components have APIs; interact by passing props
-  2. A class has an API; interact by invoking methods
-  3. A web service has an API; interact by making network requests
+> Application Programming Interface - Interacting with a resource
+  1. read the API's documentation to understand how to use
+  2. React components have APIs; interact by passing props
+  3. A class has an API; interact by invoking methods
+  4. A web service has an API; interact by making network requests
 
 #### Network Requests
 > fetch, returns a promise with a response object
@@ -745,7 +745,10 @@ handleClick = () => {
   try/catch to handle errors
 
 #### Authenticaion 
-> 
+
+
+#### Validate Input
+> componentDidUpdate() 
 
 ### HTTP Methods
 #### GET
@@ -783,23 +786,23 @@ handleClick = () => {
   Immutable
 
 #### Store
-> Maintains and Manages state\
-  Only updated by a dispatch()\
-  add listeners invoked on state changes
+> Maintains and Manages state
+1. Only updated by a dispatch()
+2. add listeners invoked on state changes
 
 #### Actions
-> Data object with the information required to make a state update\
-  Actions creators create actions.\
-  Must be dispatched in order to affect state.
+> Data object with the information required to make a state update
+1. Actions creators create actions
+2. Must be dispatched in order to affect state
 
 #### Methods associated with redux
-> 1. store.getState()
-  2. store.dispatch()
-  3. create HOC that checks for state updates and passes new props
+1. store.getState()
+2. store.dispatch()
+3. create HOC that checks for state updates and passes new props
 
 #### react-redux
-> 1. <Provider /> gives children access to our redux store\
-  2. connect() helps us subscribe to the portion of the store we want, and helps to bind action creators.
+1. <Provider /> gives children access to our redux store
+2. connect() helps us subscribe to the portion of the store we want, and helps to bind action creators.
 
 #### Redux Async Requests 
 > 
@@ -830,31 +833,26 @@ handleClick = () => {
 > Chrome Performance Profiler
 
 #### Common Performance Cocerns
-> 1. Unnecessarily rerendering
-      componenets rerender when receiving new props, only subscribe to the parts of state needed, keys, shouldComponentUpdate()
-  2. Changing props
-      Passing unneeded props to a child, object literal in render() will create a new object at each render
-  3. logic in mount/update
-      Adding properties to class instance instead of methods because properties are created at each mount where methods are one time
+1. Unnecessarily rerendering 
+     1. componenets rerender when receiving new props, only subscribe to the parts of state needed, keys, shouldComponentUpdate()
+2. Changing props
+     1. Passing unneeded props to a child, object literal in render() will create a new object at each render
+3. logic in mount/update
+     1. Adding properties to class instance instead of methods because properties are created at each mount where methods are one time
 
 ### Deploying
 
 ### Testing
 
 #### Test Pyramid
-> 1. Unit tests
-  
-  2. Integration/Service tests
-  3. UI/End-to-end tests
+1. Unit tests
+2. Integration/Service tests
+3. UI/End-to-end tests
 
 #### Jest
 
-
-
-
 ## Contributions:
 Add to the list:
-
 Email suggestion to jwgravesfl@gmail.com
 
 ### References and Information Sources
